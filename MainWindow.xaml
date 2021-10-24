@@ -5,15 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Temle_Robert_Lab2"
         mc:Ignorable="d"
-        Title="Pizzeria Colloseo" Height="515.893" Width="1140.714" ResizeMode="NoResize" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}">
+        Title="Pizzeria Colloseo" Height="515.893" Width="1140.714" ResizeMode="NoResize" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}" Loaded="frmMain_Loaded">
     <Grid x:Name="lblPepperoniPizza" Margin="0,0,0,-8.6" HorizontalAlignment="Left" Width="1131">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>
-            <ColumnDefinition Width="515*"/>
-            <ColumnDefinition Width="276*"/>
+
+
+
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="lblTitle" Content="Pizza - Bake &amp; Sale" HorizontalAlignment="Left" Margin="459,10,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Height="39" Grid.Column="1" Width="224"/>
-        <GroupBox x:Name="gbPizza" Grid.ColumnSpan="3" Header="PizzaType" HorizontalAlignment="Left" Height="137" VerticalAlignment="Top" Width="921" RenderTransformOrigin="1.242,1.757" Margin="55,77,0,0" FontWeight="Bold">
+        <Label x:Name="lblTitle" Content="Pizza - Bake &amp; Sale" HorizontalAlignment="Left" Margin="430,10,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Height="39" Grid.Column="1" Width="224"/>
+        <GroupBox x:Name="gbPizza" Header="PizzaType" HorizontalAlignment="Left" Height="137" VerticalAlignment="Top" Width="921" RenderTransformOrigin="1.242,1.757" Margin="35,77,0,0" FontWeight="Bold" Grid.Column="1">
             <Canvas HorizontalAlignment="Left" Height="126" VerticalAlignment="Top" Width="901" Margin="10,0,-2.2,-22">
                 <Label x:Name="lblMargheritaPizza" Content="Margherita Pizza" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="32" Canvas.Top="9" FontWeight="Bold"/>
                 <TextBox x:Name="txtMargheritaPizza" Height="22" Canvas.Left="135" TextWrapping="Wrap" Text="0" Canvas.Top="13" Width="72" TextChanged="TextBox_TextChanged" SpellCheck.IsEnabled="True" IsReadOnly="True" TextAlignment="Right" FontWeight="Bold"/>
@@ -27,7 +29,7 @@
                 <TextBox x:Name="txtCanibalePizza" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" Canvas.Left="505" Canvas.Top="69" FontWeight="Bold" TextAlignment="Right" IsReadOnly="True"/>
             </Canvas>
         </GroupBox>
-        <GroupBox x:Name="gbSale" Grid.ColumnSpan="3" Header="Current Sale" HorizontalAlignment="Left" Height="229" VerticalAlignment="Top" Width="921" Margin="55,240,0,0" FontWeight="Bold">
+        <GroupBox x:Name="gbSale" Header="Current Sale" HorizontalAlignment="Left" Height="229" VerticalAlignment="Top" Width="921" Margin="35,240,0,0" FontWeight="Bold" Grid.Column="1">
             <Canvas HorizontalAlignment="Left" Height="219" Margin="0,0,-2.2,-12.6" VerticalAlignment="Top" Width="911">
                 <Label x:Name="lblQuantity" Content="Quantity" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="27" Canvas.Top="30" FontWeight="Bold"/>
                 <TextBox x:Name="txtQuantity" Height="23" Canvas.Left="88" TextWrapping="Wrap" Text="0" Canvas.Top="30" Width="120" FontWeight="Bold" TextAlignment="Right"/>
@@ -49,13 +51,18 @@
             </MenuItem>
             <MenuItem Header="Pizza">
                 <MenuItem Header="Make">
-                    <MenuItem x:Name="margPizzaMenuItem" Header="Margherita Pizza"/>
-                    <MenuItem x:Name="pepPizzaMenuItem" Header="Pepperoni Pizza"/>
-                    <MenuItem x:Name="vegPizzaMenuItem" Header="Veggie Pizza"/>
-                    <MenuItem x:Name="quatPizzaMenuItem" Header="Quatro Stagioni"/>
-                    <MenuItem x:Name="canPizzaMenuItem" Header="Canibale Pizza"/>
+                    <MenuItem x:Name="margPizzaMenuItem" Header="Margherita Pizza"
+                              Click="margPizzaMenuItem_Click" IsCheckable="True"/>
+                    <MenuItem x:Name="pepPizzaMenuItem" Header="Pepperoni Pizza"
+                              Click="margPizzaMenuItem_Click" IsCheckable="True"/>
+                    <MenuItem x:Name="vegPizzaMenuItem" Header="Veggie Pizza"
+                              Click="margPizzaMenuItem_Click" IsCheckable="True"/>
+                    <MenuItem x:Name="quatPizzaMenuItem" Header="Quatro Stagioni"
+                              Click="margPizzaMenuItem_Click" IsCheckable="True"/>
+                    <MenuItem x:Name="canPizzaMenuItem" Header="Canibale Pizza"
+                              Click="margPizzaMenuItem_Click" IsCheckable="True"/>
                 </MenuItem>
-                <MenuItem Header="Stop"/>
+                <MenuItem Header="Stop" x:Name="mnuStop" Click="stopMenuItem_Click"/>
             </MenuItem>
         </Menu>
     </Grid>
